@@ -13,23 +13,22 @@
     <section id="header">
         <h1>Salary Calculator</h1>
     </section>
-    <section id="addEmp">
+    <section id="addEmp" class="secWrap">
         <h1>Add Employee</h1>
         <form>
-            <label for="addEmpFN">First Name</label>
-            <input id="addEmpFN" placeholder="First Name" type="text" />
-            <label for="addEmpLN">Last Name</label>
-            <input id="addEmpLN" placeholder="Last Name" type="text" />
-            <label for="addEmpID">ID</label>
-            <input id="addEmpID" placeholder="ID" type="text" />
-            <label for="addEmpTitle">Title</label>
-            <input id="addEmpTitle" placeholder="Title" type="text" />
-            <label for="addEmpAnnSal">Annual Salary</label>
-            <input id="addEmpAnnSal" placeholder="Annual Salary" type="text" />
-            <button id="addNewEmp">Submit</button>
+            <div id="addEmpInputs">
+                <input id="addEmpFN" placeholder="First Name" type="text" />
+                <input id="addEmpLN" placeholder="Last Name" type="text" />
+                <input id="addEmpID" placeholder="ID" type="text" />
+                <input id="addEmpTitle" placeholder="Title" type="text" />
+                <input id="addEmpAnnSal" placeholder="Annual Salary" type="text" />
+            </div>
+            <div id="addEmpButton">
+                <button id="addNewEmp">Submit</button>
+            </div>
         </form>
     </section>
-    <section id="newEmps">
+    <section id="newEmps" class="secWrap">
         <h1>Employees</h1>
         <table id="newEmpTable">
             <thead>
