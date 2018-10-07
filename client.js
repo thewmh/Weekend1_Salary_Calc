@@ -25,7 +25,7 @@ function onReady() {
 
 function addEmployee() {
     event.preventDefault();
-    console.log('add employee button clicked!');
+    console.log('New employee added.');
     let addEmpFN_In = $('#addEmpFN').val();
     let addEmpLN_In = $('#addEmpLN').val();
     let addEmpID_In = $('#addEmpID').val();
@@ -63,18 +63,22 @@ function appendEmployeeList() {
 // adding salaries
 
 function sumSal() {
-    console.log('adding all of the salaries');
+    console.log('Calculating the monthly total cost of employee database.');
+    $('#totalMonth').removeClass();
     let empSal = $('#totalMonth');
     let allEmpSalInt = 0;
         empSal.empty();
         empSal.append('Total Monthly: $', allEmpSalInt.toFixed(2));
     for( let employee of empArr ) {
         allEmpSalInt += parseFloat(employee.annual/12);
+        if (allEmpSalInt >= 20000 ) {
+            $('#totalMonth').toggleClass('over20k', true);
+        }
+        if (allEmpSalInt < 20000 ) {
+            $('#totalMonth').toggleClass('over20k', false);
+        } 
         empSal.empty();
         empSal.append('Total Monthly: $', allEmpSalInt.toFixed(2));
-        if (allEmpSalInt > 20000 ) {
-            $('#totalMonth').toggleClass('over20k');        
-        }
     }
 }
 
@@ -82,12 +86,10 @@ function sumSal() {
 // deleting employee
 
 function deleteEmp() {
-    console.log('deleting the employee!');
     for( let emp in empArr) {
-        console.log(empArr[emp].id);
-        console.log($(this).closest('tr').find('#empIDTable').text());
+        console.log('Deleting', empArr[emp].fName, empArr[emp].lName +','+ ' Employee ID:', empArr[emp].id, 'from the employee database.');
         if(empArr[emp].id == $(this).closest('tr').find('#empIDTable').text()){
-            console.log('bye now');
+            console.log('Thank you for working with us', empArr[emp].fName);
             empArr.splice(emp, 1);
         } else {
             console.log('false');

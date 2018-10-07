@@ -14,8 +14,13 @@ body {
 #addEmpInputs input {
     flex-grow: 1;
     height: 30px;
-    border: 1px solid #bbb;
+    border: none;
+    border-bottom: 1px solid #bbb;
     padding: 5px;
+}
+
+input:focus {
+    outline: none;
 }
 
 #addEmpInputs input:not(:last-child) {
@@ -36,7 +41,7 @@ body {
 #header {
     height: 200px;
     margin: auto;
-    background-color: #6b6b6b;
+    background-color: #07aa9e;
     text-align: center;
 }
 
@@ -57,7 +62,7 @@ body {
 }
 
 th {
-    background-color: #6b6b6b;
+    background-color: #07aa9e;
     border: none;
     padding: 15px;
     color: #fff;
@@ -77,10 +82,16 @@ tr:nth-child(odd) {
 
 .over20k {
     background-color: red;
+    color: #fff;
+}
+
+.under20k {
+    background-color: yellowgreen;
 }
 
 #totalMonth {
     text-align: right;
+    padding: 10px;
 }
 
 #addEmpButton {
@@ -88,12 +99,24 @@ tr:nth-child(odd) {
     float: right;
 }
 
-#addNewEmp {
-    border: 1px solid #bbb;
-    background-color: #fff;
+button {
+    border: none;
+    color: #fff;
     border-radius: 20px;
     height: 30px;
     width: 200px;
+}
+
+#addNewEmp {
+    
+    background-color: #07aa9e;
+    
+}
+
+
+#addNewEmp:hover {
+    background-color: hotpink;
+    border: none;
 }
 
 ::placeholder {
@@ -103,4 +126,6 @@ tr:nth-child(odd) {
 
 .deleteEmp {
     float: right;
+    background-color: red;
+    margin-right: -15px;
 }
