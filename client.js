@@ -19,6 +19,7 @@ function onReady() {
     console.log('JQ');
     $('#addNewEmp').on('click', addEmployee);
     $('#newEmp').on('click', '.deleteEmp', deleteEmp);
+    $('#thDeleteText').toggleClass('showDeleteText', true);
 }
 
 // add employee function
@@ -56,7 +57,13 @@ function appendEmployeeList() {
     element.empty();
     for( let employee of empArr ) {
         console.log(employee);
-        element.append(`<tr><td>${employee.fName}</td><td>${employee.lName}</td><td id="empIDTable">${employee.id}</td><td>${employee.title}</td><td>${employee.annual}<button class="deleteEmp">Delete</button></td></tr>`);
+        element.append(`<tr><td>${employee.fName}</td><td>${employee.lName}</td><td id="empIDTable">${employee.id}</td><td>${employee.title}</td><td>${employee.annual}</td><td><button class="deleteEmp">Delete</button></td></tr>`);
+    }
+    if ( empArr.length > 0 ) {
+        $('#thDeleteText').toggleClass('showDeleteText', false);
+    }
+    if ( empArr.length <= 0 ) {
+        $('#thDeleteText').toggleClass('showDeleteText', true);
     }
 }
 

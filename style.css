@@ -104,7 +104,7 @@ button {
     color: #fff;
     border-radius: 20px;
     height: 30px;
-    width: 200px;
+    width: 100%;
 }
 
 #addNewEmp {
@@ -128,4 +128,8 @@ button {
     float: right;
     background-color: red;
     margin-right: -15px;
+}
+
+.showDeleteText {
+    display: none;
 }
